@@ -1,8 +1,5 @@
-#from game import Game
-from src.board import Board
+from src.game import Game
 
 def main():
-    booard = Board()
-    booard.draw_board()
-    booard.update_board([["x", " ", "o"], ["o", " ", "o"], ["x", " ", "o"]])
+   game = Game()
 main()

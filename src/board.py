@@ -2,8 +2,6 @@ class Board:
     def __init__(self):
         self.size = 3
         self.board = self.twoD_arr()
-        
-
 
     def draw_board(self):
         for i in range(self.size):
@@ -28,5 +26,5 @@ class Board:
                 print(board[i][j], end='')
                 if j != 2:
                     print(" | ", end='')
-            print("")  
+            print("") 
         

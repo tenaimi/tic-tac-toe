@@ -6,6 +6,5 @@ class Player:
     
     def play_turn(self, x, y):
         if self.is_human == True:
-            self.human()
-        #print() character in location x, y on board
+            print()
       
