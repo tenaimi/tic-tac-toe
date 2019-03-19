@@ -22,10 +22,13 @@ class Game:
        computer = Player("Computer", available_characters[0], not is_human)
        
        context = None
-
-       while not self.game_over(context):
+       control = self.game_over(context)
+       
+       while not control:
         context = human.play(context)
+        control = self.game_over(context)
         context = computer.play(context)
+        control = self.game_over(context)
     
     def game_over(self, nested_array):
         return False
