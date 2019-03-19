@@ -1,31 +1,31 @@
-from src.board import Board
 from src.player import Player
 
 class Game:
     def __init__(self):
         self.initialize_game()
-        self.play()
-        self.available_characters = ['X', 'O']
     
     def initialize_game(self):
-        print('---------------')
-        print(' Tic Tac Toe   ')
-        print('---------------\n')
+        print('-------------------------')
+        print(' Welcome To Tic Tac Toe  ')
+        print('-------------------------')
     
-    def play(self):
+    def start(self):
+       available_characters = ['X', 'O']
        name = input("Enter your name: ")
        character = input("Enter your character (X or O): ").upper()
        while character != 'X' and character != 'O':
            character = input("Please re-enter your character (X or O): ")
        is_human = True
-       board = Board()
-       self.available_characters.remove(character)
+       available_characters.remove(character)
 
-       player = Player(name, character, is_human)
-       computer = Player("Computer", self.available_characters[0], not is_human)
+       human = Player(name, character, is_human)
+       computer = Player("Computer", available_characters[0], not is_human)
+       
+       context = None
 
-       print("Play by choosing and (x, y) co-ordinate on the board")
-       board.draw_board()
-
+       while not self.game_over(context):
+        context = human.play(context)
+        context = computer.play(context)
     
-
+    def game_over(self, nested_array):
+        return False
