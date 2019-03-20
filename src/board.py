@@ -10,15 +10,15 @@ class Board:
                 if j != 2:
                     print(" | ", end='')
             print("")
-            
+
     def twoD_arr(self):
         result = []
-        for i in range(self.size):
+        for _ in range(self.size):
             item = []
-            for j in range(self.size):
+            for _ in range(self.size):
                 item.append(" ")
             result.append(item)
-        return result  
+        return result
 
     def update_board(self, board):
         for i in range(self.size):
@@ -26,5 +26,4 @@ class Board:
                 print(board[i][j], end='')
                 if j != 2:
                     print(" | ", end='')
-            print("") 
-        
+            print("")
