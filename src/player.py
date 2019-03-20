@@ -6,6 +6,7 @@ class Player:
         self.name = name
         self.character = character
         self.is_human = is_human
+        self.proceed = True
     
     def play(self, nested_array):
         if nested_array == None:
@@ -36,6 +37,7 @@ class Player:
                 if int(counter) == int(position):
                     if nested_array[i][j] == 'X' or nested_array[i][j] == 'O':
                         print(str(counter) + " is not available. Try Again " + self.name)
+                        self.proceed = False
                         return nested_array
                     nested_array[i][j] = self.character
                 if nested_array[i][j] != 'X' and nested_array[i][j] != 'O':
@@ -52,4 +54,5 @@ class Player:
                     possible_choices.append(counter)
         random_choice = randint(0, len(possible_choices) - 1)
         return possible_choices[int(random_choice)]
+
                    
