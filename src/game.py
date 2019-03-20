@@ -28,10 +28,10 @@ class Game:
         while not control:
             if computer.proceed:
                 context = human.play(context)
-            control = self.game_over(context)
+                control = self.game_over(context)
             if human.proceed:
                 context = computer.play(context)
-            control = self.game_over(context)
+                control = self.game_over(context)
 
     def game_over(self, nested_array):
         if nested_array != None:
