@@ -25,7 +25,7 @@ class Board:
             for _ in range(self.size):
                 item.append(" ")
             result.append(item)
-        return result  
+        return result
 
     def update_board(self, board):
         print('')
