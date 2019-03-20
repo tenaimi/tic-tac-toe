@@ -51,13 +51,13 @@ class Game:
                             print(content, " is the Winner!!")
                             return True
                     if (i == 0 and j == 0) and content != " ":
-                        # check upper diagonal
+                        # check forward diagonal
                         if content == nested_array[i+1][j+1] and content == nested_array[i+2][j+2]:
                             print(content, " is the Winner!!")
                             return True
-                    if (i == 2 and j == 2) and content != " ":
-                        # check lower diagonal
-                        if content == nested_array[i-1][j-1] and content == nested_array[i-2][j-2]:
+                    if (i == 0 and j == 2) and content != " ":
+                        # check backward diagonal
+                        if content == nested_array[i+1][j-1] and content == nested_array[i+2][j-2]:
                             print(content, " is the Winner!!")
                             return True
         return False
